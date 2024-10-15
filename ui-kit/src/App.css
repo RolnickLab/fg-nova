@@ -4,5 +4,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(104deg, #5193f0 -16.22%, #f476a4 146.07%);
+  background: var(--gradient-fieldguide);
 }
