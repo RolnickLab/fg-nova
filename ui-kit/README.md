@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# Fg Nova UI Kit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the start of the code version of Fg Nova UI Kit. We use [shadcn/ui](https://ui.shadcn.com/) as a component reference. Components are built using [Radix UI](https://www.radix-ui.com/) and [Tailwind CSS](https://tailwindcss.com/). We use [Storybook](https://storybook.js.org/) as a visual and interactive documentation of the code version of the UI Kit.
 
-Currently, two official plugins are available:
+## System requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node
+- NPM
 
-## Expanding the ESLint configuration
+The `.nvmrc` file in project root describes the recommended Node version for this project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Run example app
 
-- Configure the top-level `parserOptions` property like this:
+```bash
+# Install dependencies
+npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Run app in development mode
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The example app will now be available in a browser on http://localhost:5173/. Hot reload will be enabled by default.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Run Storybook
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+# Install dependencies
+npm install
+
+# Run Storybook in development mode
+npm run storybook
+```
+
+Storybook will now be available in a browser on http://localhost:5174/.
+
+## Publish Storybook
+
+First, export Storybook as a static web app:
+
+```bash
+# Install dependencies
+npm install
+
+# Generate static files
+npm run build-storybook
+```
+
+Now, files in the `storybook-static` directory can be deployed to any static site hosting service.
+
+## Add a new component
+
+First, checkout the list of [available components](https://ui.shadcn.com/docs/components). Then use the CLI to add a component to the project. This will create a new component in folder `/src/components/ui` and install any dependencies it might have. Since the component is copied to the project, not installed as a dependency, it can be tweaked as needed.
+
+```bash
+npx shadcn-ui@latest add [component-name]
 ```
