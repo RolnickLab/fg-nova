@@ -15,9 +15,10 @@ Portal.displayName = "Select.Portal";
 const Trigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> & {
+    hideIcon?: boolean;
     loading?: boolean;
   }
->(({ className, children, loading, ...props }, ref) => (
+>(({ children, className, hideIcon, loading, ...props }, ref) => (
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
@@ -27,13 +28,15 @@ const Trigger = React.forwardRef<
     {...props}
   >
     {children}
-    <SelectPrimitive.Icon asChild>
-      {loading ? (
-        <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
-      ) : (
-        <ChevronDown className="h-4 w-4 shrink-0" />
-      )}
-    </SelectPrimitive.Icon>
+    {!hideIcon ? (
+      <SelectPrimitive.Icon asChild>
+        {loading ? (
+          <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
+        ) : (
+          <ChevronDown className="h-4 w-4 shrink-0" />
+        )}
+      </SelectPrimitive.Icon>
+    ) : null}
   </SelectPrimitive.Trigger>
 ));
 Trigger.displayName = "Select.Trigger";
