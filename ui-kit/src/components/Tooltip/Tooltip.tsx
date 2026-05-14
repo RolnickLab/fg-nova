@@ -8,6 +8,8 @@ const Root = TooltipPrimitive.Root;
 
 const Trigger = TooltipPrimitive.Trigger;
 
+const Portal = TooltipPrimitive.Portal;
+
 const Content = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
@@ -24,4 +26,4 @@ const Content = React.forwardRef<
 ));
 Content.displayName = TooltipPrimitive.Content.displayName;
 
-export { Content, Provider, Root, Trigger };
+export { Content, Portal, Provider, Root, Trigger };
