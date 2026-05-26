@@ -1,3 +1,5 @@
+> ⚠️ **Deprecated:** This repository is no longer maintained. The code has been migrated to the [Antenna](https://github.com/RolnickLab/antenna) repository. See PR [#1318](https://github.com/RolnickLab/antenna/pull/1318) for more details.
+
 # Nova UI Kit
 
 Nova UI Kit is a React library with components related to insect monitoring. We use [shadcn/ui](https://ui.shadcn.com/) as a component reference. Components are built using [Radix UI](https://www.radix-ui.com/) and [Tailwind CSS](https://tailwindcss.com/). We use [Storybook](https://storybook.js.org/) as a visual and interactive documentation of the code version of the UI Kit.
